@@ -17,23 +17,23 @@ uint8_t n4=n1/n3;  			   //sizeof array as number of elements
 printf("Array Length= %d \n",n4); 
 //printf("uint8 Length= %d \n",sizeof(n1));
 
+printf("\nThe array is: \n");
+printfn(array, n1);
 
-uint8_t arr_avg_n=3; //no: of elements to take for the averaging
-
-uint8_t arr_avg[n4-arr_avg_n+1];
-
-for(int i=0;i<(n4-arr_avg_n+1); i++)
+for(int i=0;i<n1;i++)
+for(int j=i+1;j<n1;j++)
 {
-arr_avg[i]= array[i]+array[i+1]+array[i+2];
+if (array[i]<array[j])
+{
+int temp= array[i];
+array[i]=array[j];
+array[j]=temp;
+}
 }
 
-printf("\nThe array is: \n");
-printfn(array, (sizeof(array)/sizeof(array[0])));
+printf("\nThe sorted array is: \n");
+printfn(array, n1);
 
-printf("\nThe sum is: \n");
-printfn(arr_avg, (sizeof(arr_avg)/sizeof(arr_avg[0])));
-
-printf("\nSum Length= %d \n",(sizeof(arr_avg)/sizeof(arr_avg[0]))); 
 
 return 0;
 }
@@ -43,6 +43,7 @@ int printfn(uint8_t arr[], uint8_t length)
 
 for(int i=0;i<length;i++)
 printf("%d,",arr[i]);
+printf("\n");
 return 0;
 
 }

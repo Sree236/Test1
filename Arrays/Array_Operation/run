@@ -1,0 +1,2 @@
+gcc Moving_Avg_fn.c -o Moving_Avg_fn
+./Moving_Avg_fn
